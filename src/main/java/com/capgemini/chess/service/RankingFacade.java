@@ -7,6 +7,7 @@ import com.capgemini.chess.exception.EmailValidationException;
 import com.capgemini.chess.exception.MatchValidationException;
 import com.capgemini.chess.exception.PasswordValidationException;
 import com.capgemini.chess.exception.UserValidationException;
+import com.capgemini.chess.service.to.MatchTO;
 import com.capgemini.chess.service.to.RankingRowTO;
 import com.capgemini.chess.service.to.UserProfileTO;
 
@@ -14,7 +15,7 @@ public interface RankingFacade {
 
 	public List<RankingRowTO> getRanking()  throws UserValidationException;
 	public List<RankingRowTO> getUserRanking(Long id) throws UserValidationException;
-	public void registerMatchResult(MatchResult matchResult, Long id) throws MatchValidationException, UserValidationException;
+	public MatchTO registerMatchResult(MatchResult matchResult, Long id) throws MatchValidationException, UserValidationException;
 	public void updateUser(UserProfileTO userProfile) throws UserValidationException, PasswordValidationException, EmailValidationException; 
 	
 }

@@ -16,11 +16,12 @@ import com.capgemini.chess.service.to.UserProfileTO;
 @RunWith(MockitoJUnitRunner.class)
 @ContextConfiguration
 public class CalculateNewStatsServiceTest {
-
+	
+	//@InjecMock
 	CalculateNewStatsService calculateNewStatsService = null;
 	
 	@Mock
-	UserValidatorService userValidator;
+	UserValidatorService userValidator; //mocujemy z impl
 	
 	@Mock
 	UpdateStatsService stateUpdater;

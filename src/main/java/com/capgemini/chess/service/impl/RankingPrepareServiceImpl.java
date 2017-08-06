@@ -1,5 +1,6 @@
 package com.capgemini.chess.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,14 +19,17 @@ public class RankingPrepareServiceImpl implements RankingPrepareService {
 
 	@Autowired
 	private SortUserServiceImpl sortUserService;
+	
+	//przed forem tworze nowa liste i do niej dodaje
 
-	private List<RankingRowTO> rankingUsers;
+	
 
 	public List<RankingRowTO> prepareRanking() {
-
+		
+		List<RankingRowTO> rankingUsers = new ArrayList<RankingRowTO>();
 		List<UserProfileTO> rankingProfileTO = readUserService.findAll();
 
-		for (int i = 0; i < rankingProfileTO.size() - 1; i++) {
+		for (int i = 0; i <= rankingProfileTO.size() - 1; i++) {
 			rankingUsers.add(new RankingRowTO(rankingProfileTO.get(i).getId(), rankingProfileTO.get(i).getLogin(),
 					rankingProfileTO.get(i).getPoints()));
 		}

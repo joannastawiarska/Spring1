@@ -30,16 +30,16 @@ public class MatchResultRegisterServiceImpl implements MatchResultRegisterServic
 	
 	private MatchTO matchTo;
 	
-	public boolean registerMatchResult(MatchResult matchResult, Long id) throws MatchValidationException, UserValidationException{
+	public MatchTO registerMatchResult(MatchResult matchResult, Long id) throws MatchValidationException, UserValidationException{
 		
 		if (matchValidator.validate(id)) {
 			matchTo = matchGetter.getMatchById(id);
 			matchTo = resultUpdater.updateMatchStatus(matchTo, matchResult);
 			stateCalculator.calculateStats(matchTo);
-			return true;
+			return matchTo;
 		}
 		else {
-			return false;
+			return matchTo;
 		}
 	}
 	

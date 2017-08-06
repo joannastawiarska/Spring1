@@ -10,6 +10,17 @@ public class MatchTO {
 	private long userSecondId;
 	MatchResult matchStatus = MatchResult.UNDEFINED;
 	
+	public MatchTO(Long id, Long userFirstId, Long userSecondId, MatchResult matchStatus) {
+		this.id = id;
+		this.userFirstId = userFirstId;
+		this.userSecondId = userSecondId;
+		this.matchStatus = matchStatus;
+	}
+	
+	public MatchTO(){
+		
+	}
+	
 	public long getId() {
 		return id;
 	}

@@ -26,6 +26,7 @@ public class UserProfileTO {
 		this.points = points;
 	}
 	
+	
 	public Level getLevel() {
 		return level;
 	}

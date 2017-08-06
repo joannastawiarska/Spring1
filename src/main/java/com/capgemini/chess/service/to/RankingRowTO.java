@@ -1,11 +1,7 @@
 package com.capgemini.chess.service.to;
 
 public class RankingRowTO {
-
-		@Override
-	public String toString() {
-		return "RankingRowTO [id=" + id + ", login=" + login + ", points=" + points + "]";
-	}
+	
 		private long id;
 		private String login;
 		private Integer points;
@@ -14,6 +10,11 @@ public class RankingRowTO {
 			this.id = id;
 			this.login = login;
 			this.points = points;
+		}
+		
+		@Override
+		public String toString() {
+			return "RankingRowTO [id=" + id + ", login=" + login + ", points=" + points + "]";
 		}
 		
 		public long getId() {

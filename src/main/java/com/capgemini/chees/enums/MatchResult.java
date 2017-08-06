@@ -5,6 +5,7 @@ public enum MatchResult {
 		DRAW,
 		UNDEFINED,
 		LOST_USER_FIRST;
+	
 	}
 
 

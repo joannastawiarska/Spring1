@@ -47,4 +47,25 @@ public class SortServiceTest {
 		//then
 		assertEquals(new Integer(453), usersActual.get(0).getPoints());
 	}
+	
+	
+	@Test
+	public void sortByPointsTestFACADE(){
+		
+		//given
+		List<RankingRowTO> users = new ArrayList<RankingRowTO>();
+		users.add(new RankingRowTO(1L, "myszka", 622));
+		users.add(new RankingRowTO(2L, "zuczek", 20));
+		users.add(new RankingRowTO(3L, "slonik", 433));
+		users.add(new RankingRowTO(4L, "witek", 21));
+		
+		//when
+		List<RankingRowTO> usersActual = sortUserService.sortByPoints(users);
+		
+		//then
+		assertEquals(new Integer(622), usersActual.get(0).getPoints());
+		assertEquals(new Integer(20), usersActual.get(3).getPoints());
+	}
+	//given
+			
 }

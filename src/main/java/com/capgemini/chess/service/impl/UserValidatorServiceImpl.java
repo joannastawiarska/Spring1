@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.capgemini.chees.dataccess.dao.UserDao;
+import com.capgemini.chees.dataccess.dao.impl.MapUserDao;
 import com.capgemini.chess.exception.UserValidationException;
 import com.capgemini.chess.service.UserValidatorService;
 
